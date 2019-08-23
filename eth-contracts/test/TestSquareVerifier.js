@@ -3,15 +3,33 @@
 const Verifier = artifacts.require('Verifier');
 // Test verification with correct proof
 // - use the contents from proof.json generated from zokrates steps
-const proofs = require('./proofs');
+// const proofs = require('./proofs');
+const proofs = require('../../zokrates/code/square/proof');
 
 
     
 // Test verification with incorrect proof
 contract('Verifier', accounts => {
-    beforeEach(async () => {
+
+   
+    it('shuld be verified with correct proof',async function(){
         this.contract = await Verifier.new({
             from: accounts[0]
         });
+        
+        let proof = proofs.proof;
+        let input = proofs.inputs;
+        let verified = await this.contract.verifyTx.call(proof.a,proof.b,proof.c,input,{from:accounts[0]});
+        assert.equal(verified,true,"proof verified");
+    })
+
+    it('should be not verified invalid input', async () => {
+        this.contract = await Verifier.new({
+            from: accounts[0]
+        });
+        let proof = proofs.proof;
+        let invalidInput = [1, 2];
+        let verified = await this.contract.verifyTx.call(proof.a, proof.b, proof.c, invalidInput,{from:accounts[0]});
+        assert.equal(verified,false,"proof not verified");
     });
 });
