@@ -18,11 +18,11 @@
  *
  */
 
-// const HDWalletProvider = require('truffle-hdwallet-provider');
+const HDWalletProvider = require('truffle-hdwallet-provider');
 // const infuraKey = "fj4jll3k.....";
 //
 // const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+var mnemonic = "glance fun glide upset burger muffin armed earth salmon hover once exchange";
 
 module.exports = {
   /**
@@ -48,6 +48,12 @@ module.exports = {
       network_id: "*",       // Any network (default: none)
      },
 
+     rinkeby: {
+      provider: () => new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/e1a8c04cf97446d8829b32ba2eacf7f9"),
+      network_id: 4, // Ropsten's id
+      gas: 4500000, // Ropsten has a lower block limit than mainnet
+      gasPrice: 10000000000
+    }
     // Another network with more advanced options...
     // advanced: {
       // port: 8777,             // Custom port

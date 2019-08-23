@@ -2,6 +2,46 @@
 
 The capstone will build upon the knowledge you have gained in the course in order to build a decentralized housing product. 
 
+# Install & Test
+- Install Required Packges :
+```
+npm install
+```
+- Starting Ganache :
+```
+ganache-cli
+```
+- Compile  :
+```
+cd eth-contracts
+truffle compile --all
+```
+- Migration :
+```
+truffle migrate --reset
+```
+- Run The Test Cases :
+```
+truffle test
+```
+
+# Addresses & Links
+
+- Contract Addresses
+```
+SolnSquareVerifier contract address:    0xAaCc1926dCc1F5d73d0bC6c2Aa11EAb7cFDFFb3B
+```
+```
+Verifier contract address:    0xD8b6A9149E2874005378af9B62008D65DCec6440
+```
+- Contract Abi's
+```
+et-contracts/build/contracts
+```
+- OpenSea MarketPlace Storefront link
+```
+https://rinkeby.opensea.io/accounts/0x8c4135c105008fe93ba5c92ca27dff4ca0d84f67
+```
 # Project Resources
 
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
