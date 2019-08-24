@@ -40,7 +40,7 @@ et-contracts/build/contracts
 ```
 - OpenSea MarketPlace Storefront link
 ```
-https://rinkeby.opensea.io/accounts/0x8c4135c105008fe93ba5c92ca27dff4ca0d84f67
+https://rinkeby.opensea.io/category/real-state-project
 ```
 # Project Resources
 
